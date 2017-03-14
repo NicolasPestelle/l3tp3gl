@@ -1,10 +1,12 @@
+OBJO = *.o
+
 all : sayHello.out
 
-sayHello.out : module1.o sayHello.o
-	g++ -std=c++14 -o $@ $^
+sayHello.out : $(OBJO)
+	$(CXX) -std=c++14 -o $@ $^
 
-%.o : %.cpp //pour tout .o et .cpp
-	g++ -std=c++14 -c $< 
+%.o : %.cpp
+	$(CXX) -std=c++14 -c $<
 
 clean :
-	rm -f sayHello.o module1.o sayHello.out
+	rm -f $(OBJO) sayHello.out
