@@ -1,0 +1,10 @@
+all : sayHello.out
+
+sayHello.out : module1.o sayHello.o
+	g++ -std=c++14 -o $@ $^
+
+%.o : %.cpp
+	g++ -std=c++14 -c $< 
+
+clean :
+	rm -f sayHello.o module1.o sayHello.out

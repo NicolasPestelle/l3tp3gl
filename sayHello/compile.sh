@@ -1,3 +1,5 @@
 #!/bin/sh
 
-g++ -o sayhello.out -Wall -std=c++14 -Wextra sayHello.cpp module1.cpp
+g++ -std=c++14 -c module1.cpp
+g++ -c sayHello.cpp
+g++  -o sayhello.out  module1.o sayHello.o
